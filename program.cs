@@ -11,9 +11,9 @@ namespace CrimeAnalyzer
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Crime Analyzer");
+            Console.WriteLine("Welcom to the Crime Analyzer");
             Console.WriteLine("\n");
-            Console.WriteLine("This program analyzes crime statistics.");
+            Console.WriteLine("This program will analyze crime statistics.");
 
             if (args.Length >= 2)
             {
@@ -40,7 +40,6 @@ namespace CrimeAnalyzer
                         while (!sr.EndOfStream)
                         {
                             var line = sr.ReadLine();
-                            //int intLine = System.Convert.ToInt32(line);
                             var values = line.Split(',');
 
                             int year = Int32.Parse(values[0]);
@@ -64,29 +63,18 @@ namespace CrimeAnalyzer
                             foreach (string year1 in yearQuery)
                             {
 
-                                Console.WriteLine(year + "");
+                                Console.WriteLine("year" + "");
                             }
                         }
-
-                        //Question 1
+                        //First Question
                         string minYear = years[1];
-                        string maxYear = years.Last();
-                        //int yearRange = maxYear - minYear + 1;
-                       
+                        string maxYear = years.Last():
                         
-                       /* IEnumerable<string> yearQuery =
-                            from year in years
-                            where murder < 15000
-                            select year;
-                        foreach (string year in yearQuery)
-                        {
-                            Console.WriteLine(year + "");
-                        }*/
                         StringBuilder newString = new StringBuilder();
-                        newString.Append("Crime Analyzer Report");
+                        newString.Append("Your Crime Analyzer Report");
                         newString.Append(Environment.NewLine);
                         newString.Append(Environment.NewLine);
-                        newString.Append("Period: " + minYear + "-" + maxYear);
+                        newString.Append("Time Period: " + minYear + "-" + maxYear);
 
                         using (var stream = new StreamWriter(reportFile))
                         {
@@ -103,7 +91,7 @@ namespace CrimeAnalyzer
             }
             else
                 {
-                    Console.WriteLine("You must provide 2 arguments: .csv file and report file.");
+                    Console.WriteLine("You must give 2 arguments: .csv file and report file.");
                 }
           
         }
